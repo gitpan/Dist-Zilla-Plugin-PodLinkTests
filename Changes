@@ -1,0 +1,35 @@
+Revision History for Dist-Zilla-Plugin-PodLinkTests
+===================================================
+
+1.003005
+--------
+
+0eb5bd7 Mention No404s in the README
+
+b564402 Fix typo in README
+
+2b91b23 Add example dist.ini to raise kwalitee
+
+1dd6c68 Add stopword for CPANPLUS
+
+4b8beb1 Remove the full path from the shebang of no404s.t
+
+v1.3 2010-12-09
+---------------
+
+3958866 Also skip the No404s test if AUTOMATED_TESTING is set
+
+5eed72c Spread out the env variables being checked for clarity
+
+ac2ab6a Store $self->test in a variable so we only derefence $self and call the method once
+
+v1.2 2010-12-09
+---------------
+
+d9d4673 Add a release test for Test::Pod::No404s
+
+ce83028 Skip test if $ENV{SKIP_POD_LINK_TESTS} is set
+
+===================================
+End of changes in the last 365 days
+===================================
