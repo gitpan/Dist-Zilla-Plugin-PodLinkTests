@@ -1,6 +1,6 @@
 package Dist::Zilla::Plugin::PodLinkTests;
 BEGIN {
-  $Dist::Zilla::Plugin::PodLinkTests::VERSION = '1.003005';
+  $Dist::Zilla::Plugin::PodLinkTests::VERSION = '1.004000';
 }
 BEGIN {
   $Dist::Zilla::Plugin::PodLinkTests::AUTHORITY = 'cpan:RWSTAUNER';
@@ -53,7 +53,7 @@ no Moose;
 
 =pod
 
-=for :stopwords Randy Stauner CPANPLUS CPAN AnnoCPAN RT CPANTS Kwalitee diff
+=for :stopwords Randy Stauner CPANPLUS CPAN AnnoCPAN RT CPANTS Kwalitee diff IRC
 
 =head1 NAME
 
@@ -61,7 +61,7 @@ Dist::Zilla::Plugin::PodLinkTests - Dynamically add release tests for POD links
 
 =head1 VERSION
 
-version 1.003005
+version 1.004000
 
 =head1 SYNOPSIS
 
@@ -135,6 +135,9 @@ You can find documentation for this module with the perldoc command.
 
 =head2 Websites
 
+The following websites have more information about this module, and may be of help to you. As always,
+in addition to those websites please use your favorite search engine to discover more resources.
+
 =over 4
 
 =item *
@@ -187,9 +190,9 @@ L<http://matrix.cpantesters.org/?dist=Dist-Zilla-Plugin-PodLinkTests>
 
 =back
 
-=head2 Bugs
+=head2 Bugs / Feature Requests
 
-Please report any bugs or feature requests to C<bug-dist-zilla-plugin-podlinktests at rt.cpan.org>, or through
+Please report any bugs or feature requests by email to C<bug-dist-zilla-plugin-podlinktests at rt.cpan.org>, or through
 the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Dist-Zilla-Plugin-PodLinkTests>.  I will be
 notified, and then you'll automatically be notified of progress on your bug as I make changes.
 
@@ -217,42 +220,46 @@ the same terms as the Perl 5 programming language system itself.
 __DATA__
 ___[ xt/release/pod-linkcheck.t ]___
 #!perl
-use strict; use warnings;
 
+use strict;
+use warnings;
 use Test::More;
 
 foreach my $env_skip ( qw(
-	SKIP_POD_LINK_TESTS
-	SKIP_POD_LINKCHECK
+  SKIP_POD_LINK_TESTS
+  SKIP_POD_LINKCHECK
 ) ){
-	plan skip_all => "\$ENV{$env_skip} is set, skipping"
-		if $ENV{$env_skip};
+  plan skip_all => "\$ENV{$env_skip} is set, skipping"
+    if $ENV{$env_skip};
 }
 
 eval "use Test::Pod::LinkCheck";
 if ( $@ ) {
-	plan skip_all => 'Test::Pod::LinkCheck required for testing POD';
-} else {
-	Test::Pod::LinkCheck->new->all_pod_ok;
+  plan skip_all => 'Test::Pod::LinkCheck required for testing POD';
+}
+else {
+  Test::Pod::LinkCheck->new->all_pod_ok;
 }
 ___[ xt/release/pod-no404s.t ]___
 #!perl
-use strict; use warnings;
 
+use strict;
+use warnings;
 use Test::More;
 
 foreach my $env_skip ( qw(
-	SKIP_POD_LINK_TESTS
-	SKIP_POD_NO404S
-	AUTOMATED_TESTING
+  SKIP_POD_LINK_TESTS
+  SKIP_POD_NO404S
+  AUTOMATED_TESTING
 ) ){
-	plan skip_all => "\$ENV{$env_skip} is set, skipping"
-		if $ENV{$env_skip};
+  plan skip_all => "\$ENV{$env_skip} is set, skipping"
+    if $ENV{$env_skip};
 }
 
 eval "use Test::Pod::No404s";
 if ( $@ ) {
-	plan skip_all => 'Test::Pod::No404s required for testing POD';
-} else {
-	all_pod_files_ok();
+  plan skip_all => 'Test::Pod::No404s required for testing POD';
+}
+else {
+  all_pod_files_ok();
 }

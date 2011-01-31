@@ -14,6 +14,7 @@ my %WriteMakefileArgs = (
   'BUILD_REQUIRES' => {
     'File::Find' => '0',
     'File::Temp' => '0',
+    'ExtUtils::MakeMaker' => '6.31',
     'Test::More' => '0.96'
   },
   'CONFIGURE_REQUIRES' => {
@@ -28,7 +29,7 @@ my %WriteMakefileArgs = (
     'Moose' => '0',
     'Moose::Util::TypeConstraints' => '1.01'
   },
-  'VERSION' => '1.003005',
+  'VERSION' => '1.004000',
   'test' => {
     'TESTS' => 't/*.t'
   }

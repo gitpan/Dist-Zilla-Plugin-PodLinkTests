@@ -1,8 +1,12 @@
 Revision History for Dist-Zilla-Plugin-PodLinkTests
 ===================================================
 
-1.003005
---------
+v1.4 2011-01-31
+---------------
+
+753f4a6 Replace tabs with spaces in inline files
+
+86d2cc8 Replace copyright_year to reflect the year the dist was started
 
 0eb5bd7 Mention No404s in the README
 
