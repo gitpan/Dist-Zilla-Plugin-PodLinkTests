@@ -55,6 +55,8 @@ eval { $v .= pmver('Module::Build','0.3601') };
 eval { $v .= pmver('Moose','any version') };
 eval { $v .= pmver('Moose::Util::TypeConstraints','1.01') };
 eval { $v .= pmver('Test::More','0.96') };
+eval { $v .= pmver('Test::Pod::LinkCheck','0.004') };
+eval { $v .= pmver('Test::Pod::No404s','0.01') };
 
 
 

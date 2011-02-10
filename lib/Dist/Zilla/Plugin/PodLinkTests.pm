@@ -1,6 +1,14 @@
+#
+# This file is part of Dist-Zilla-Plugin-PodLinkTests
+#
+# This software is copyright (c) 2010 by Randy Stauner.
+#
+# This is free software; you can redistribute it and/or modify it under
+# the same terms as the Perl 5 programming language system itself.
+#
 package Dist::Zilla::Plugin::PodLinkTests;
 BEGIN {
-  $Dist::Zilla::Plugin::PodLinkTests::VERSION = '1.004000';
+  $Dist::Zilla::Plugin::PodLinkTests::VERSION = '1.005';
 }
 BEGIN {
   $Dist::Zilla::Plugin::PodLinkTests::AUTHORITY = 'cpan:RWSTAUNER';
@@ -53,7 +61,8 @@ no Moose;
 
 =pod
 
-=for :stopwords Randy Stauner CPANPLUS CPAN AnnoCPAN RT CPANTS Kwalitee diff IRC
+=for :stopwords Randy Stauner CPANPLUS cpan testmatrix url annocpan anno bugtracker rt
+cpants kwalitee diff irc mailto metadata placeholders
 
 =head1 NAME
 
@@ -61,7 +70,7 @@ Dist::Zilla::Plugin::PodLinkTests - Dynamically add release tests for POD links
 
 =head1 VERSION
 
-version 1.004000
+version 1.005
 
 =head1 SYNOPSIS
 
@@ -129,6 +138,8 @@ L<Test::Pod::No404s>
 
 =head1 SUPPORT
 
+=head2 Perldoc
+
 You can find documentation for this module with the perldoc command.
 
   perldoc Dist::Zilla::Plugin::PodLinkTests
@@ -193,8 +204,8 @@ L<http://matrix.cpantesters.org/?dist=Dist-Zilla-Plugin-PodLinkTests>
 =head2 Bugs / Feature Requests
 
 Please report any bugs or feature requests by email to C<bug-dist-zilla-plugin-podlinktests at rt.cpan.org>, or through
-the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Dist-Zilla-Plugin-PodLinkTests>.  I will be
-notified, and then you'll automatically be notified of progress on your bug as I make changes.
+the web interface at L<http://rt.cpan.org/NoAuth/ReportBug.html?Queue=Dist-Zilla-Plugin-PodLinkTests>. You will be automatically notified of any
+progress on the request by the system.
 
 =head2 Source Code
 

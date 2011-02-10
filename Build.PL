@@ -20,15 +20,18 @@ my %module_build_args = (
     'Randy Stauner <rwstauner@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-Plugin-PodLinkTests',
-  'dist_version' => '1.004000',
+  'dist_version' => '1.005',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::Plugin::PodLinkTests',
-  'recommends' => {},
+  'recommends' => {
+    'Test::Pod::No404s' => '0.01'
+  },
   'recursive_test_files' => 1,
   'requires' => {
     'Dist::Zilla::Plugin::InlineFiles' => '0',
     'Moose' => '0',
     'Moose::Util::TypeConstraints' => '1.01',
+    'Test::Pod::LinkCheck' => '0.004',
     'perl' => '5.006'
   },
   'script_files' => []

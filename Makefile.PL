@@ -27,9 +27,10 @@ my %WriteMakefileArgs = (
   'PREREQ_PM' => {
     'Dist::Zilla::Plugin::InlineFiles' => '0',
     'Moose' => '0',
-    'Moose::Util::TypeConstraints' => '1.01'
+    'Moose::Util::TypeConstraints' => '1.01',
+    'Test::Pod::LinkCheck' => '0.004'
   },
-  'VERSION' => '1.004000',
+  'VERSION' => '1.005',
   'test' => {
     'TESTS' => 't/*.t'
   }
