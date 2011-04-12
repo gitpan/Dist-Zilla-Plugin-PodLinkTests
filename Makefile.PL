@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'Dynamically add release tests for POD links',
+  'ABSTRACT' => 'Deprecated',
   'AUTHOR' => 'Randy Stauner <rwstauner@cpan.org>',
   'BUILD_REQUIRES' => {
     'File::Find' => '0',
@@ -30,7 +30,7 @@ my %WriteMakefileArgs = (
     'Moose::Util::TypeConstraints' => '1.01',
     'Test::Pod::LinkCheck' => '0.004'
   },
-  'VERSION' => '1.005',
+  'VERSION' => '1.006',
   'test' => {
     'TESTS' => 't/*.t'
   }

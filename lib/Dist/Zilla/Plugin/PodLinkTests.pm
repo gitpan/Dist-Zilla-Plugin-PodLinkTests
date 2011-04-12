@@ -8,12 +8,12 @@
 #
 package Dist::Zilla::Plugin::PodLinkTests;
 BEGIN {
-  $Dist::Zilla::Plugin::PodLinkTests::VERSION = '1.005';
+  $Dist::Zilla::Plugin::PodLinkTests::VERSION = '1.006';
 }
 BEGIN {
   $Dist::Zilla::Plugin::PodLinkTests::AUTHORITY = 'cpan:RWSTAUNER';
 }
-# ABSTRACT: Dynamically add release tests for POD links
+# ABSTRACT: Deprecated
 
 
 use Moose;
@@ -36,6 +36,14 @@ my @tests = qw(linkcheck no404s);
 # to only return desired sections.
 sub merged_section_data {
 	my ($self) = @_;
+
+	my $pre = 'Dist::Zilla::Plugin::Test::Pod::';
+	$self->log($_) for (
+		'!',
+		__PACKAGE__ . " is deprecated.",
+		"Use ${pre}LinkCheck and ${pre}No404s instead.",
+		'!',
+	);
 
 	my $selftest = $self->test;
 	return {} if $selftest eq 'none';
@@ -61,64 +69,35 @@ no Moose;
 
 =pod
 
-=for :stopwords Randy Stauner CPANPLUS cpan testmatrix url annocpan anno bugtracker rt
-cpants kwalitee diff irc mailto metadata placeholders
+=for :stopwords Randy Stauner cpan testmatrix url annocpan anno bugtracker rt cpants
+kwalitee diff irc mailto metadata placeholders
 
 =head1 NAME
 
-Dist::Zilla::Plugin::PodLinkTests - Dynamically add release tests for POD links
+Dist::Zilla::Plugin::PodLinkTests - Deprecated
 
 =head1 VERSION
 
-version 1.005
+version 1.006
 
 =head1 SYNOPSIS
 
-	# dist.ini
-	[PodLinkTests]
-	; test = both   ; options: qw(both none linkcheck no404s)
+This module is B<deprecated> in favor of the simpler/saner
+L<Dist::Zilla::Plugin::Test::Pod::LinkCheck>
+and
+L<Dist::Zilla::Plugin::Test::Pod::No404s>.
+
+Please use those.
+
+  # dist.ini
+  [Test::Pod::LinkCheck]
+  [Test::Pod::No404s]
+
+This module will be removed in the near future.
 
 =head1 DESCRIPTION
 
-This is an extension of L<Dist::Zilla::Plugin::InlineFiles>, providing the
-following files:
-
-  xt/release/pod-linkcheck.t - a standard Test::Pod::LinkCheck test
-  xt/release/pod-no404s.t    - a standard Test::Pod::No404s test
-
-The tests check for the following C<%ENV> variables:
-
-=over 4
-
-=item *
-
-C<$ENV{SKIP_POD_LINK_TESTS}> - skip both
-
-=item *
-
-C<$ENV{SKIP_POD_LINKCHECK}>  - skip L<Test::Pod::LinkCheck>
-
-=item *
-
-C<$ENV{SKIP_POD_NO404S}>     - skip L<Test::Pod::No404s>
-
-=item *
-
-C<$ENV{AUTOMATED_TESTING}>   - skip L<Test::Pod::No404s>
-
-=back
-
-I elected to skip the 404 test with C<AUTOMATED_TESTING>
-because I don't want to run that test (and bother the network) often,
-but I do like to run my author and release tests
-before actually attempting C<dzil release>.
-
-So using C<dzil smoke> instead of C<dzil test>
-will skip the 404 network tests.
-
-B<NOTE> You may need to update your CPANPLUS index
-before Test::Pod::LinkCheck will work (or in my case even install).
-Using the C<x> command at the C<cpanp> prompt did the trick for me.
+See L</SYNOPSIS>.
 
 =for Pod::Coverage merged_section_data
 
@@ -128,11 +107,11 @@ Using the C<x> command at the C<cpanp> prompt did the trick for me.
 
 =item *
 
-L<Test::Pod::LinkCheck>
+L<Dist::Zilla::Plugin::Test::Pod::LinkCheck>
 
 =item *
 
-L<Test::Pod::No404s>
+L<Dist::Zilla::Plugin::Test::Pod::No404s>
 
 =back
 

@@ -15,12 +15,12 @@ my %module_build_args = (
   'configure_requires' => {
     'Module::Build' => '0.3601'
   },
-  'dist_abstract' => 'Dynamically add release tests for POD links',
+  'dist_abstract' => 'Deprecated',
   'dist_author' => [
     'Randy Stauner <rwstauner@cpan.org>'
   ],
   'dist_name' => 'Dist-Zilla-Plugin-PodLinkTests',
-  'dist_version' => '1.005',
+  'dist_version' => '1.006',
   'license' => 'perl',
   'module_name' => 'Dist::Zilla::Plugin::PodLinkTests',
   'recommends' => {
